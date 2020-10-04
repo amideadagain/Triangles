@@ -1,33 +1,46 @@
 package com.company;
 
-import lombok.ToString;
-
 public class Triangle {
-    static public double LineA;
-    static public double LineB;
-    static public double LineC;
-
-    public double getLineA() {
-        return LineA;
+    private int a, b, c;
+    public double P, S, A, B, C;
+    public Triangle()
+    {
+        a = 3;
+        b = 4;
+        c = 5;
     }
-
-    public double getLineB() {
-        return LineB;
+    public boolean ExistTriangle()
+    {
+        return ((a + b < c) || (b + c > a) || (c + a > b));
     }
-
-    public double getLineC() {
-        return LineC;
+    public double Perimetr()
+    {
+        P = a + b + c;
+        return P;
     }
+    public double Square()
+    {
+        S = ((P * (P - a) * (P - c) * (P - b))* ((P * (P - a) * (P - c) * (P - b))));
+        return S;
 
-    public void setLineA(double LineA) {
-        this.LineA = LineA;
     }
-
-    public void setLineB(double LineB) {
-        this.LineB = LineB;
+    public double Degree1()
+    {
+        A = Math.acos(Math.pow(b, 2)) + Math.pow(c, 2) - Math.pow(a, 2) / (2 * b * c);
+        return A;
     }
-
-    public void setLineC(double LineC) {
-        this.LineC = LineC;
+    public double Degree2()
+    {
+        B = Math.acos(Math.pow(a, 2)) + Math.pow(c, 2) - Math.pow(b, 2) / (2 * a * c);
+        return B;
+    }
+    public double Degree3()
+    {
+        C = Math.acos(Math.pow(b, 2)) + Math.pow(a, 2) - Math.pow(c, 2) / (2 * b * c);
+        return C;
+    }
+    public void WriteTr()
+    {
+        System.out.println("a" + a + "b" + b + "c" + c + "Perimetr" + Perimetr() + " " + Square() + " " + Degree1() + " " + Degree2() + " " + Degree3());
     }
 }

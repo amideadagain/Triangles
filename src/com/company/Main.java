@@ -1,12 +1,11 @@
 package com.company;
 
-import java.util.ArrayList;
-
 public class Main {
 
-    private static Object Triangle;
-
     public static void main(String[] args) {
-        Triangle = new Triangle();
+        Triangle tr1 = new Triangle();
+        TriangleEq tr2 = new TriangleEq();
+        tr1.WriteTr();
+        tr2.TriangleCheck();
     }
 }
